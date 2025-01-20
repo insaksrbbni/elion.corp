@@ -1,0 +1,402 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+//mendefinisikan mixin
+@mixin sm {
+    @media only screen and (min-width: 576px) { @content; }
+  }
+  @mixin md {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+  @mixin lg {
+   @media only screen and (min-width: 992px) { @content; }
+  }
+  
+
+.header {
+    box-sizing: border-box;
+        display: flex;
+        padding: 0 2%;
+        position: fixed;
+        align-items: center;
+        width: 100%;
+        background-color: rgb(44, 42, 42);
+        justify-content: space-between;
+        height: 50px;
+        .box-logo {
+                color: #a0a0a0;
+        }
+        .box-nav {
+            display: flex;
+            justify-content: space-around;
+            gap: 8px;
+            a {
+                text-decoration: none;
+                position: relative;
+                padding: 0 10px;
+                color: #a0a0a0;
+                letter-spacing: 0.5px;
+            }
+            a:after {
+                content: "";
+                position: absolute;
+                background-color: aqua;
+                height: 3px;
+                width: 0;
+                left: 0;
+                bottom: -10px;
+                transition: 0.3s;
+            }
+            a:hover {
+                color: #ffff;
+            }
+            a:hover:after {
+                width: 100%;
+            }
+        }
+    }
+
+.section-hero {
+    display: flex;
+    text-align: center;
+    padding: 0 5%;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    background-color: #a0a0a0;
+    .box-title {
+        align-items: center;
+        justify-content: center;
+        h1 {
+            @include lg {
+                font-size: 34px;
+            }
+            font-size: 24px;
+            margin-top: -25px;
+        }
+        h2 {
+            @include lg {
+                font-size: 34px;
+            }
+            font-size: 26px;
+        }
+        p {
+            @include lg {
+                margin-top: -15px;
+            }
+            margin-top: -10px;
+        }
+    }
+}
+
+.section-sotk {
+    padding: 0 5%;
+    padding-top: 1%;
+    .box-title {
+        h1 {
+            color: black;
+        }
+        p {
+            margin-top: -1%;
+            font-size: medium;
+        }
+    }
+    .box-content {
+        background-color: #a0a0a0;
+        height: 500px;
+    }
+}
+
+.section-apd {
+    padding: 0 5%;
+    box-sizing: border-box;
+    .box-content {
+        @include lg {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 4fr;
+            grid-gap: 8px;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .card {
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #a0a0a0;
+            @include lg {
+                height: 400px;
+            }
+            height: 400px;
+            width: 100%;
+        }
+    }
+}
+
+.section-visi-misi {
+    padding: 0 5%;
+    .box-title {
+        p{
+            margin-top: -1%;
+            font-size: medium;
+        }
+    }
+    .box-content {
+        @include lg {
+            display: grid;
+            grid-template-columns: 50% 2fr;
+            grid-gap: 8px;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .card {
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center ;
+            background-color: #a0a0a0;
+            width: auto;
+            height: 400px;
+        }
+    }
+}
+
+.section-peta-lokasi {
+    padding: 0 5%;
+    .box-title {
+        p {
+            margin-top: -1%;
+        }
+    }
+    .box-content {
+        @include lg {
+            display: grid;
+            grid-template-columns: 50% 2fr;
+            grid-gap: 8px;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .card-map {
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            height: 400px;
+            padding: 0 5%;
+            background-color: #a0a0a0;
+            .card-title {
+                h4 {
+                    border-bottom: #020202 1px solid;
+                    padding-bottom: 2%;
+                }
+            }
+            .subtitle {
+                margin-top: -2%;
+                color: #e0e0e0;
+            }
+            .content {
+                border-bottom: #020202 1px solid;
+                margin-top: -5%;    
+                display: grid;
+                grid-template-columns: 50% 2fr;
+                p {
+                    margin-top: -2%;
+                }
+            }
+            .luas {
+                border-bottom: #020202  1px solid;
+                display: flex;
+                gap: 36%;
+                .title {
+                    h4 {
+                        color: #e0e0e0;
+                    }
+                }
+                .luas-content {
+                    h4 {
+                        
+                    }
+                }
+            }
+            .jml {
+                border-bottom: #020202  1px solid;
+                display: flex;
+                gap: 26%;
+                .title {
+                    h4 {
+                        color: #e0e0e0;
+                    }
+                }
+                .jml-content {
+                    h4 {
+                        
+                    }
+                }
+            }
+        }
+        .card-map {
+            background-color: #a0a0a0;
+        }
+    }
+}
+
+.section-berita {
+    padding: 0 5%;
+    .box-title {
+        p {
+            margin-top: -1%;
+        }
+    }
+    .box-content {
+        @include lg {
+            display: flex;
+            flex-direction: row;
+            gap: 9px;
+            align-items: center;
+            justify-content: center;
+        }
+        display: flex;
+        flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        .card {
+            box-shadow: #020202;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .box-img {
+                box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                width: 350px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #a0a0a0;
+            }
+            .box-subcontent {
+                box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                background-color: #e0e0e0;
+                max-width: 345px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: -2%;
+                .sub-title {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    font-size: 20px;
+                }
+                .description {
+                    margin-top: -30px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    font-size: 15px;
+                }
+                .date {
+                    display: grid;
+                    grid-template-columns: 50% 1fr;
+                    align-items: center;
+                    grid-gap: 50px;
+                    margin-top: -1%;
+                    .user {
+                        width: max-content;
+                    }
+                    .subdate {
+                        width: max-content;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-pelayanan {
+    padding: 0 5%;
+    .box-title {
+        p {
+            margin-top: -1%;
+        }
+    }
+    .box-content {
+        @include lg {
+            display: grid;
+            grid-template-columns: 50% 2fr;
+            grid-gap: 8px;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .card {
+            display: flex;
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            background-color: #a0a0a0;
+            min-width: 100%;
+            height: 350px;
+        }
+    }
+}
+
+.footer {
+    margin-top: 1%;
+    background-color: #dddd;
+    padding: 1% 5%;
+    .container {
+        .box-content {
+            @include lg {
+                display: grid;
+                grid-template-columns: 50% 2fr;
+                grid-gap: 8px;
+            }
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .card {
+                .card-title {
+                    h4 {
+                        border-bottom: #020202 1px solid;
+                        padding-bottom: 5px;
+                        letter-spacing: 1px;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+  
+  //memanggil atau menggunaan mixin
+//   .content {
+//     font-size: 10px; // untuk sm (phone)
+  
+//     @include md {
+//       font-size: 12px; // untuk md (tablet, laptop)
+//     }
+  
+//     @include lg {
+//       font-size: 14px; // untuk md (laptop degan resolusi tinggi)
+//     }
+//   }
